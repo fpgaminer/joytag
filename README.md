@@ -15,6 +15,10 @@ JoyTag is a state of the art AI vision model for tagging images, with a focus on
 * Training time: 660M samples
 * F1 Score: 0.578 @ 0.4 threshold
 
+## Examples
+
+![example 1](assets/screenshot_20231220a.jpg)
+![example 2](assets/screenshot_20231220b.jpg)
 
 ## What Does It Do?
 
