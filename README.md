@@ -12,7 +12,7 @@ JoyTag is a state of the art AI vision model for tagging images, with a focus on
 * Output: Multi-Label Classification
 * Tags: 5000+
 * Training dataset: Danbooru 2021 + Auxiliary
-* Training time: 880M samples
+* Training time: 660M samples
 * F1 Score: 0.578 @ 0.4 threshold
 
 
@@ -115,14 +115,14 @@ The JoyTag model is based on the ViT architecture with a CNN stem and GAP head.
 * No mixup
 * No label smoothing
 * Focal loss with gamma=2.0
-* Trained for 220M samples at a resolution of 224x224, followed by a restart for 660M samples at a resolution of 448x448.
+* Trained for 220M samples at a resolution of 224x224, followed by a restart for 440M samples at a resolution of 448x448.
 
 
 ## Development Notes
 
 The model is primarily limited by data at this time, with overfitting occurring if pushed past the current training regimen or model size.  L/14@224 based models are able to train up to an F1 of 0.51 before overfitting.  Same for H/14 which only made a small F1 improvement and then overfit, even with increased StochDepth.  This is to be expected, as B/16@448 has similar computational costs as L/14@224, but less parameters, and thus seems to provide a way to expand the model while keeping good regularization.
 
-Neither MixUp nor Label smoothing provided improvements in my testings at both 220M and 880M scales.  Mixup provided the most regularization, but the end F1 score was lower than without it.  The current learning rate, weight decay, and stochdepth rates appear to be close to optimal in the 220M range based on sweeps.  No experimentation was done on the settings for the 448 section of training, so its possible a more optimal learning rate is available there.
+Neither MixUp nor Label smoothing provided improvements in my testings at both 220M and 440M scales.  Mixup provided the most regularization, but the end F1 score was lower than without it.  The current learning rate, weight decay, and stochdepth rates appear to be close to optimal in the 220M range based on sweeps.  No experimentation was done on the settings for the 448 section of training, so its possible a more optimal learning rate is available there.
 
 Trivial augment worked better than RandAugment and other augmentation schemes, providing the best cure against overfitting.  It's possible other augmentations could help regularize more and allow more training.
 
