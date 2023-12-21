@@ -89,6 +89,10 @@ def predict(image: Image.Image):
 
 image = Image.open('test.jpg')
 tag_string, scores = predict(image)
+
+print(tag_string)
+for tag, score in sorted(scores.items(), key=lambda x: x[1], reverse=True):
+	print(f'{tag}: {score:.3f}')
 ```
 
 
