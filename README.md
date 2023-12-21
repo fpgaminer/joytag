@@ -37,8 +37,12 @@ from pathlib import Path
 import torch
 import torchvision.transforms.functional as TVF
 
+path = '/home/.../joytag/models'  # Change this to where you downloaded the model
+THRESHOLD = 0.4
+
 model = VisionModel.load_model(path)
 model.eval()
+model = model.to('cuda')
 
 with open(Path(path) / 'top_tags.txt', 'r') as f:
 	top_tags = [line.strip() for line in f.readlines() if line.strip()]
@@ -73,7 +77,7 @@ def predict(image: Image.Image):
 		'image': image_tensor.unsqueeze(0),
 	}
 
-	with torch.amp.autocast_mode.autocast('cpu', enabled=True):
+	with torch.amp.autocast_mode.autocast('cuda', enabled=True):
 		preds = model(batch)
 		tag_preds = preds['tags'].sigmoid().cpu()
 	
