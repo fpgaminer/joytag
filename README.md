@@ -156,6 +156,11 @@ The Danbooru tagging system is primarily geared for anime/manga style art, so wh
 The JoyTag team's goal is for the model to handle a wide range of content with equal skill, and focussed on keeping the auxiliary dataset diverse to mitigate biases.  However, this is an on going battle that will always be a work in progress.  For example, the model still struggles with tags like "very dark skin".  If you find a tag that the model struggles with, please open an issue letting us know your experiences so we can better guide our efforts.
 
 
+## Metrics
+
+Besides the mean F1 reported above, more detailed per-tag metrics are available in `full-metrics.txt`.  All metrics are reported on the validation set of size 32,768.  PHash was used to ensure the validation set excludes any images that occur in the training data.
+
+
 ## Future Work
 
 This is the initial release.  The JoyTag team is busy using the freshly trained model to assist in tagging more images to both expand the auxiliary dataset and improve the model's current weak points.
