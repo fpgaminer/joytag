@@ -13,6 +13,7 @@ It is recommended to use images that are at least a couple of months old on Danb
 
 32768 posts, min id 6734042, max id 6769098
 3993 tags in common after filtering by usage
+SmilingWolf model: wd-v1-4-vit-tagger-v2
 
 ## Usage
 
