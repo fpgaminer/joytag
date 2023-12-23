@@ -168,6 +168,8 @@ The JoyTag team's goal is for the model to handle a wide range of content with e
 
 Besides the mean F1 reported above, more detailed per-tag metrics are available in `full-metrics.txt`.  All metrics are reported on the validation set of size 32,768.  PHash was used to ensure the validation set excludes any images that occur in the training data.
 
+Comparison to other models on unseen images is available in the [Validation Arena](validation-arena/).
+
 
 ## Future Work
 

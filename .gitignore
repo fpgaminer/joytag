@@ -1,0 +1,6 @@
+/validation-arena/originals
+/validation-arena/resized
+*.pt
+*.onnx
+__pycache__
+/validation-arena/posts.jsonl
