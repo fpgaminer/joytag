@@ -74,7 +74,7 @@ def prepare_image(image: Image.Image, target_size: int) -> torch.Tensor:
 def predict(image: Image.Image):
 	image_tensor = prepare_image(image, model.image_size)
 	batch = {
-		'image': image_tensor.unsqueeze(0),
+		'image': image_tensor.unsqueeze(0).to('cuda'),
 	}
 
 	with torch.amp.autocast_mode.autocast('cuda', enabled=True):
