@@ -1,0 +1,3 @@
+*.parquet
+__pycache__/
+*.sqlite3
