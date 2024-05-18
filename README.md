@@ -129,6 +129,8 @@ The JoyTag model is based on the ViT architecture with a CNN stem and GAP head.
 * Focal loss with gamma=2.0
 * Trained for 220M samples at a resolution of 224x224, followed by a restart for 440M samples at a resolution of 448x448.
 
+Scripts and processes used to train JoyTag are shared in the `training` directory, in case they are of interest to others.
+
 
 ## Development Notes
 
